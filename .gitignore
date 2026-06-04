@@ -1,0 +1,35 @@
+# Python / Training
+training/data/
+training/best.pth
+training/unet.onnx
+training/saved_model/
+training/model.tflite
+training/results.png
+training/__pycache__/
+training/*.pyc
+*.pyc
+__pycache__/
+.ipynb_checkpoints/
+*.egg-info/
+dist/
+build/
+.env
+.venv
+env/
+
+# Android
+android/.gradle/
+android/local.properties
+android/.idea/
+android/app/build/
+android/build/
+android/captures/
+android/.externalNativeBuild/
+android/.cxx/
+android/app/src/main/assets/model.tflite
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo

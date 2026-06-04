@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+    <!-- App Bar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        app:liftOnScroll="true">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/pet_amber"
+            app:title="@string/app_name"
+            app:subtitle="@string/app_subtitle"
+            app:titleTextColor="#FFFFFF"
+            app:subtitleTextColor="#FFFFFFCC"
+            app:menu="@menu/menu_main" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Scrollable content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Image card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardImages"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="16dp"
+                app:strokeColor="@color/pet_surface_variant"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="12dp">
+
+                    <!-- Dual image row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <!-- Original image panel -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/ivOriginal"
+                                android:layout_width="match_parent"
+                                android:layout_height="220dp"
+                                android:contentDescription="@string/cd_original_image"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_placeholder_pet"
+                                android:background="@color/pet_surface_variant" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:gravity="center"
+                                android:text="@string/label_original"
+                                android:textAppearance="?attr/textAppearanceLabelMedium"
+                                android:textColor="@color/pet_on_surface_variant" />
+
+                        </LinearLayout>
+
+                        <!-- Divider -->
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/pet_surface_variant" />
+
+                        <!-- Segmented image panel -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/ivSegmented"
+                                android:layout_width="match_parent"
+                                android:layout_height="220dp"
+                                android:contentDescription="@string/cd_segmented_image"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_placeholder_pet"
+                                android:background="@color/pet_surface_variant" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:gravity="center"
+                                android:text="@string/label_segmented"
+                                android:textAppearance="?attr/textAppearanceLabelMedium"
+                                android:textColor="@color/pet_on_surface_variant" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Camera / Gallery button row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCamera"
+                    style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:text="@string/btn_camera"
+                    app:icon="@drawable/ic_camera_alt"
+                    app:iconGravity="textStart"
+                    app:strokeColor="@color/pet_amber"
+                    android:textColor="@color/pet_amber" />
+
+                <Space
+                    android:layout_width="8dp"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnGallery"
+                    style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:text="@string/btn_gallery"
+                    app:icon="@drawable/ic_photo_library"
+                    app:iconGravity="textStart"
+                    app:strokeColor="@color/pet_amber"
+                    android:textColor="@color/pet_amber" />
+
+            </LinearLayout>
+
+            <!-- Run segmentation button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRun"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/btn_run"
+                android:textSize="15sp"
+                app:backgroundTint="@color/pet_amber"
+                app:icon="@drawable/ic_play_arrow"
+                app:iconGravity="textStart" />
+
+            <!-- Progress indicator -->
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:visibility="gone"
+                app:indicatorColor="@color/pet_amber"
+                app:trackColor="@color/pet_surface_variant"
+                tools:visibility="visible" />
+
+            <!-- Legend chips -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="4dp"
+                android:text="Segmentation Classes"
+                android:textAppearance="?attr/textAppearanceLabelSmall"
+                android:textColor="@color/pet_on_surface_variant" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:singleLine="false">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipPet"
+                    style="@style/Widget.Material3.Chip.Assist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/legend_pet"
+                    app:chipBackgroundColor="#1AFF6F00"
+                    app:chipStrokeColor="@color/pet_amber"
+                    app:chipStrokeWidth="1dp"
+                    android:textColor="@color/pet_amber"
+                    app:chipIcon="@drawable/ic_circle_amber"
+                    app:chipIconSize="12dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipBackground"
+                    style="@style/Widget.Material3.Chip.Assist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/legend_background"
+                    app:chipBackgroundColor="#1A00695C"
+                    app:chipStrokeColor="@color/pet_teal"
+                    app:chipStrokeWidth="1dp"
+                    android:textColor="@color/pet_teal"
+                    app:chipIcon="@drawable/ic_circle_teal"
+                    app:chipIconSize="12dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipBorder"
+                    style="@style/Widget.Material3.Chip.Assist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/legend_border"
+                    app:chipBackgroundColor="#1A9E9E9E"
+                    app:chipStrokeColor="#9E9E9E"
+                    app:chipStrokeWidth="1dp"
+                    android:textColor="#757575"
+                    app:chipIcon="@drawable/ic_circle_gray"
+                    app:chipIconSize="12dp" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <!-- Bottom padding -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="24dp" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

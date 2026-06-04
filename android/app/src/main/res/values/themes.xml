@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.PetSeg" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/pet_amber</item>
+        <item name="colorPrimaryVariant">@color/pet_amber_dark</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">@color/pet_teal</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+        <item name="colorSurface">@color/pet_surface</item>
+        <item name="colorOnSurface">@color/pet_on_surface</item>
+        <item name="colorSurfaceVariant">@color/pet_surface_variant</item>
+        <item name="android:colorBackground">@color/pet_surface</item>
+        <item name="android:statusBarColor">@color/pet_amber</item>
+        <item name="android:navigationBarColor">@color/pet_surface</item>
+    </style>
+
+</resources>

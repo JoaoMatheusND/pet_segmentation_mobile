@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary palette -->
+    <color name="pet_amber">#FF6F00</color>
+    <color name="pet_amber_dark">#C43E00</color>
+    <color name="pet_amber_light">#FFA040</color>
+
+    <!-- Secondary palette -->
+    <color name="pet_teal">#00695C</color>
+    <color name="pet_teal_dark">#003D33</color>
+    <color name="pet_teal_light">#439889</color>
+
+    <!-- Surface / neutral -->
+    <color name="pet_surface">#FFFBF7</color>
+    <color name="pet_surface_variant">#F5EFE6</color>
+    <color name="pet_on_surface">#1A1A1A</color>
+    <color name="pet_on_surface_variant">#4A4A4A</color>
+
+    <!-- Mask overlay colors (semi-transparent) -->
+    <color name="mask_pet">#AAFF6F00</color>
+    <color name="mask_bg">#AA00695C</color>
+    <color name="mask_border">#AA9E9E9E</color>
+</resources>

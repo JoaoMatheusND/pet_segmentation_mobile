@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">PetSeg</string>
+    <string name="app_subtitle">On-device segmentation</string>
+    <string name="btn_camera">Camera</string>
+    <string name="btn_gallery">Gallery</string>
+    <string name="btn_run">Run Segmentation</string>
+    <string name="label_original">Original</string>
+    <string name="label_segmented">Segmented</string>
+    <string name="legend_pet">Pet</string>
+    <string name="legend_background">Background</string>
+    <string name="legend_border">Border</string>
+    <string name="snack_pick_image">Pick an image first</string>
+    <string name="about_title">About PetSeg</string>
+    <string name="about_message">UNet semantic segmentation model trained on Oxford-IIIT Pet dataset.\n\nModel: TFLite FP32\nInput: 256×256 RGB\nClasses: Pet · Background · Border</string>
+    <string name="about_ok">OK</string>
+    <string name="menu_about">About</string>
+    <string name="cd_original_image">Original image</string>
+    <string name="cd_segmented_image">Segmented mask overlay</string>
+</resources>
