@@ -33,3 +33,4 @@ android/app/src/main/assets/model.tflite
 Thumbs.db
 *.swp
 *.swo
+data/*

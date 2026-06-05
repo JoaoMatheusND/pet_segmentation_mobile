@@ -42,6 +42,7 @@ def export_onnx(export_model: nn.Module) -> None:
         input_names=["input"],
         output_names=["output"],
         dynamic_axes={"input": {0: "batch"}, "output": {0: "batch"}},
+        dynamo=False,
     )
     onnx.checker.check_model(onnx.load(ONNX_PATH))
     print(f"  ONNX exported and verified: {ONNX_PATH}")
@@ -49,8 +50,7 @@ def export_onnx(export_model: nn.Module) -> None:
 
 def onnx_to_savedmodel() -> None:
     result = subprocess.run(
-        ["onnx2tf", "-i", ONNX_PATH, "-o", SAVED_MODEL,
-         "--non_verbose", "--overwrite_saved_model"],
+        ["onnx2tf", "-i", ONNX_PATH, "-o", SAVED_MODEL, "-n"],
         capture_output=True, text=True,
     )
     if result.returncode != 0:

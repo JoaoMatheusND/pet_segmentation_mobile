@@ -4,7 +4,7 @@ torchmetrics>=1.0.0
 matplotlib>=3.7.0
 numpy>=1.24.0
 Pillow>=9.5.0
-onnx==1.15.0
+onnx>=1.15.0
 onnx2tf>=1.17.0
-tensorflow==2.14.0
+tensorflow>=2.14.0
 tqdm>=4.65.0
